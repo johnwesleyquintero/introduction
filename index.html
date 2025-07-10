@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Wesley Quintero - Data-Driven Amazon & E-commerce Specialist</title>
+    <!-- Google Fonts for professional typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS Variables for easy theming */
+        :root {
+            --primary-color: #007bff; /* Bright, professional blue */
+            --primary-dark-color: #0056b3; /* Darker shade for accents */
+            --secondary-color: #6c757d; /* Muted grey for secondary text */
+            --accent-color: #28a745; /* Green for highlights/success */
+            --background-light: #f8f9fa; /* Light background */
+            --background-mid: #e9ecef; /* Slightly darker background for contrast */
+            --background-dark: #dee2e6; /* Even darker for strong highlight contrast */
+            --text-color-dark: #343a40; /* Dark text */
+            --text-color-light: #ffffff; /* Light text */
+            --border-color: #ced4da; /* Subtle border */
+            --box-shadow-light: 0 4px 12px rgba(0,0,0,0.08); /* Soft shadow */
+            --box-shadow-medium: 0 6px 18px rgba(0,0,0,0.12); /* More prominent shadow */
+            --border-radius: 10px; /* Rounded corners */
+            --spacing-unit: 1.5rem; /* Base spacing unit */
+        }
+
+        /* Base Body Styling */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-light);
+            color: var(--text-color-dark);
+            line-height: 1.7; /* Improved readability */
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased; /* Smoother fonts */
+            -moz-osx-font-smoothing: grayscale; /* Smoother fonts */
+        }
+
+        /* Main Container for the Presentation */
+        .presentation-container {
+            max-width: 1000px; /* Slightly wider for more content */
+            margin: 30px auto; /* More margin from edges */
+            background-color: var(--text-color-light);
+            box-shadow: var(--box-shadow-medium); /* More distinct shadow */
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        /* Slide Styling */
+        .slide {
+            padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 3); /* Increased padding */
+            border-bottom: 1px solid var(--border-color); /* Subtle separator */
+            min-height: 500px; /* Ensure sufficient height for each slide */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Vertically center content */
+            align-items: center; /* Horizontally center content */
+            text-align: center; /* Default text alignment for slides */
+            position: relative;
+            box-sizing: border-box; /* Include padding in height */
+        }
+
+        /* Alternating background for visual distinction */
+        .slide:nth-child(odd) {
+            background-color: var(--background-light);
+        }
+        .slide:nth-child(even) {
+            background-color: var(--background-mid);
+        }
+
+        .slide:last-child {
+            border-bottom: none;
+        }
+
+        /* Content wrapper within slides */
+        .slide-content {
+            width: 100%;
+            max-width: 800px; /* Adjust max width for content */
+            margin: 0 auto;
+        }
+
+        /* Typography - Headers */
+        .slide-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-weight: 800; /* Extra bold for impact */
+            font-size: 3.2rem; /* Larger title */
+            line-height: 1.2;
+        }
+
+        .slide-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.6rem;
+            margin-top: 0.5rem;
+        }
+
+        h2.headline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem; /* Larger main headlines */
+            color: var(--primary-dark-color); /* Slightly darker primary for headlines */
+            margin-top: 0;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        h2.headline::after { /* Underline effect for headlines */
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* General List Styling */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left; /* Align list items to left within slide-content */
+        }
+
+        ul li {
+            margin-bottom: 1rem;
+            padding-left: 2rem; /* More space for icon */
+            position: relative;
+            font-size: 1.1rem; /* Slightly larger text */
+        }
+
+        ul li:before {
+            content: "\f00c"; /* Font Awesome checkmark */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 0.2rem; /* Adjust vertical alignment */
+            font-size: 1.2rem;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+        }
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        .contact-info a:hover {
+            color: var(--primary-dark-color);
+            text-decoration: underline;
+        }
+        .contact-info i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Profile Photo */
+        .profile-photo {
+            width: 180px; /* Slightly larger photo */
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 2rem auto 1.5rem;
+            display: block;
+            border: 6px solid var(--primary-color); /* Thicker border */
+            box-shadow: var(--box-shadow-light); /* Shadow for photo */
+        }
+
+        /* QR Code */
+        .qr-code-placeholder {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .qr-code-placeholder img {
+            width: 120px; /* Larger QR code */
+            height: 120px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 0.5rem;
+        }
+        .qr-code-placeholder small {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        /* Icon Grid for key capabilities */
+        .icon-grid {
+            display: flex;
+            justify-content: center;
+            gap: 3rem; /* More space between items */
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .icon-item {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--secondary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 100px; /* Ensure consistency */
+        }
+        .icon-item i {
+            font-size: 3rem; /* Larger icons */
+            color: var(--primary-dark-color);
+            margin-bottom: 0.7rem;
+            transition: transform 0.2s ease-in-out; /* Subtle hover effect */
+        }
+        .icon-item:hover i {
+            transform: translateY(-5px);
+        }
+
+        /* Highlight Text */
+        .highlight-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem; /* Larger highlight text */
+            font-weight: 600;
+            color: var(--text-color-dark);
+            margin: 2rem 0;
+            text-align: center;
+            background-color: var(--background-dark); /* Stronger background for highlight */
+            padding: 1.2rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-light);
+        }
+        .highlight-text strong {
+            color: var(--primary-color); /* Highlight color */
+            font-weight: 700;
+        }
+
+        /* Metrics styling */
+        .metrics strong {
+            color: var(--accent-color);
+            font-size: 1.1em;
+            font-weight: 700;
+        }
+
+        /* Experience Details */
+        .experience-detail {
+            margin-bottom: 2rem;
+            text-align: left; /* Align experience details to left */
+        }
+        .experience-detail p {
+            margin: 0.8rem 0;
+            font-size: 1.1rem;
+        }
+        .experience-detail ul {
+            margin-top: 1rem;
+            margin-left: 1rem;
+            list-style: disc; /* Use discs for achievements */
+            padding-left: 0;
+        }
+        .experience-detail ul li {
+            padding-left: 0;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            color: var(--secondary-color); /* Muted color for achievements */
+        }
+        .experience-detail ul li:before {
+            content: none; /* Remove checkmark from this list */
+        }
+
+        /* Unique Edge Grid (2 columns on desktop) */
+        .unique-edge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider columns */
+            gap: 2rem; /* More gap */
+            margin-top: 2.5rem;
+        }
+        .unique-edge-item {
+            background-color: var(--background-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.8rem; /* More padding */
+            text-align: left;
+            box-shadow: var(--box-shadow-light);
+            transition: transform 0.2s ease-in-out;
+        }
+        .unique-edge-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-medium);
+        }
+        .unique-edge-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem; /* Larger heading */
+            color: var(--primary-dark-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .unique-edge-item ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+        }
+        .unique-edge-item ul li {
+            padding-left: 0;
+            margin-bottom: 0.7rem;
+            font-size: 1rem;
+        }
+        .unique-edge-item ul li:before {
+            content: none;
+        }
+
+        /* Project Card Grid (3 columns on desktop) */
+        .project-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted for 3 columns */
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        .project-card {
+            background-color: var(--background-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--box-shadow-light);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex; /* Flex for vertical alignment */
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-medium);
+        }
+        .project-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: var(--primary-dark-color);
+            margin-top: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .project-card p {
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            flex-grow: 1; /* Allows paragraph to take available space */
+        }
+        .project-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px solid var(--primary-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            transition: all 0.2s ease-in-out;
+            display: inline-block; /* Ensure padding and border work */
+            margin-top: auto; /* Pushes button to bottom */
+        }
+        .project-card a:hover {
+            background-color: var(--primary-color);
+            color: var(--text-color-light);
+            text-decoration: none;
+        }
+
+        /* Skill Category Grid (4 columns on desktop) */
+        .skill-category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted for 4 columns */
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        .skill-category {
+            background-color: var(--background-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow-light);
+            transition: transform 0.2s ease-in-out;
+        }
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        .skill-category h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: var(--primary-dark-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        .skill-category ul li {
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            color: var(--text-color-dark);
+            padding-left: 0;
+        }
+        .skill-category ul li:before {
+            content: none;
+        }
+
+        /* Call to Action */
+        .call-to-action {
+            margin-top: 2.5rem;
+            font-size: 1.3rem; /* Larger font */
+            font-weight: 600;
+            color: var(--text-color-dark);
+            line-height: 1.5;
+        }
+        .call-to-action strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .presentation-container {
+                margin: 20px;
+            }
+            .slide {
+                padding: var(--spacing-unit) calc(var(--spacing-unit) * 1.5);
+                min-height: auto;
+            }
+            .slide-title {
+                font-size: 2.5rem;
+            }
+            .slide-subtitle {
+                font-size: 1.4rem;
+            }
+            h2.headline {
+                font-size: 1.9rem;
+            }
+            .unique-edge-grid, .project-card-grid, .skill-category-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust columns for smaller screens */
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .presentation-container {
+                margin: 15px;
+                border-radius: 0; /* Remove border-radius on very small screens for full width */
+                box-shadow: none; /* Remove shadow on very small screens */
+            }
+            .slide {
+                padding: var(--spacing-unit);
+            }
+            .slide-title {
+                font-size: 2rem;
+            }
+            .slide-subtitle {
+                font-size: 1.1rem;
+            }
+            h2.headline {
+                font-size: 1.6rem;
+                margin-bottom: 1.5rem;
+            }
+            .highlight-text {
+                font-size: 1.1rem;
+                padding: 1rem;
+            }
+            .icon-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            .unique-edge-grid, .project-card-grid, .skill-category-grid {
+                grid-template-columns: 1fr; /* Stack on mobile */
+                gap: 1rem;
+            }
+            .profile-photo {
+                width: 140px;
+                height: 140px;
+            }
+            ul li {
+                font-size: 1rem;
+                padding-left: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide-title {
+                font-size: 1.8rem;
+            }
+            .slide-subtitle {
+                font-size: 1rem;
+            }
+            h2.headline {
+                font-size: 1.4rem;
+            }
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+                border-width: 4px;
+            }
+            .icon-item i {
+                font-size: 2.5rem;
+            }
+            .qr-code-placeholder img {
+                width: 90px;
+                height: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+
+        <!-- Slide 1: Title Slide (Enhanced for visual impact) -->
+        <section id="slide1" class="slide">
+            <div class="slide-content">
+                <img src="https://avatars.githubusercontent.com/u/190981914?v=4" alt="John Wesley Quintero" class="profile-photo">
+                <h1 class="slide-title">John Wesley Quintero</h1>
+                <h2 class="slide-subtitle">Data-Driven Amazon & E-commerce Specialist</h2>
+                <p class="contact-info">
+                    <i class="fas fa-envelope"></i> <a href="mailto:wesley.ecomva@gmail.com">wesley.ecomva@gmail.com</a>
+                </p>
+                <p class="contact-info">
+                    <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/johnwesleyquintero" target="_blank">LinkedIn Profile</a>
+                    <div class="qr-code-placeholder">
+                        <!-- Replace with your LinkedIn QR Code. You can generate one at goqr.me or similar sites. -->
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.linkedin.com/in/johnwesleyquintero" alt="LinkedIn QR Code">
+                        <small>Scan for LinkedIn</small>
+                    </div>
+                </p>
+            </div>
+        </section>
+
+        <!-- Slide 2: Who Am I? - A Snapshot of My Expertise -->
+        <section id="slide2" class="slide">
+            <div class="slide-content">
+                <h2 class="headline">Who Am I? - A Snapshot of My Expertise</h2>
+                <p class="highlight-text"><strong>5+ Years Driving E-commerce Profitability</strong> – Bridging Strategy with Technical Execution.</p>
+                <ul>
+                    <li><strong>Amazon & E-commerce Growth:</strong> Deep expertise in Amazon SEO, PPC, and holistic account management, driving sustainable growth.</li>
+                    <li><strong>Data-Driven Decisions:</strong> Consistently optimizing listings, managing high-performing ad campaigns, and extracting actionable insights from complex data.</li>
+                    <li><strong>Technical Edge:</strong> Actively developing custom automation tools (SP-API, Node.js) to bridge strategic needs with scalable technical solutions.</li>
+                </ul>
+                <div class="icon-grid">
+                    <div class="icon-item"><i class="fas fa-chart-line"></i><span>Growth Strategy</span></div>
+                    <div class="icon-item"><i class="fas fa-database"></i><span>Data Analytics</span></div>
+                    <div class="icon-item"><i class="fas fa-cogs"></i><span>Automation</span></div>
+                    <div class="icon-item"><i class="fab fa-amazon"></i><span>Amazon Ecosystem</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: My Value Proposition - What I Bring to the Table -->
+        <section id="slide3" class="slide">
+            <div class="slide-content">
+                <h2 class="headline">My Value Proposition - What I Bring to the Table</h2>
+                <p class="highlight-text">"I don't just identify opportunities; I build the tools and processes to capitalize on them, turning insights into tangible results."</p>
+                <ul>
+                    <li><strong>Proven Growth Driver:</strong> Consistently achieved significant sales increases and enhanced profitability for clients in competitive e-commerce markets.</li>
+                    <li><strong>Operational Excellence:</strong> Streamlining complex processes, improving efficiency across all e-commerce operations, from inventory to customer service.</li>
+                    <li><strong>Technical Problem Solver:</strong> Developing innovative, custom solutions for real-world e-commerce challenges, enhancing existing workflows and unlocking new capabilities.</li>
+                </ul>
+                <div class="icon-grid">
+                    <div class="icon-item"><i class="fas fa-handshake-angle"></i><span>Strategic Partnership</span></div>
+                    <div class="icon-item"><i class="fas fa-rocket"></i><span>Accelerated Growth</span></div>
+                    <div class="icon-item"><i class="fas fa-lightbulb"></i><span>Innovation & Adaptability</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Key Experience Highlight 1: Driving Growth at My Amazon Guy -->
+        <section id="slide4" class="slide">
+            <div class="slide-content">
+                <h2 class="headline">Key Experience Highlight: Driving Growth at My Amazon Guy</h2>
+                <div class="experience-detail">
+                    <h3>Amazon Specialist 2 | Oct 2024 - Mar 2025</h3>
+                    <p>At My Amazon Guy, I focused on maximizing client profitability and visibility through strategic Amazon PPC and SEO initiatives.</p>
+                    <ul>
+                        <li class="metrics">Spearheaded data-driven Amazon SEO and PPC strategies, resulting in an <strong>average client sales increase of 35%</strong> and a significant boost in organic rankings.</li>
+                        <li>Designed and implemented custom data visualization dashboards for client reporting, enhancing transparency and strategic decision-making.</li>
+                        <li>Developed "My Amazon Analytics" – a powerful internal dashboard for optimizing Amazon advertising performance and identifying campaign inefficiencies.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Key Experience Highlight 2: Technical Solutions & Process Optimization -->
+        <section id="slide5" class="slide">
+            <div class="slide-content">
+                <h2 class="headline">Key Experience Highlight: Technical Solutions & Process Optimization</h2>
+                <div class="experience-detail">
+                    <p>My previous roles at Bulk Buy America, Adorama, and Champion E-com LLC honed my ability to build efficient processes and solve complex operational challenges.</p>
+                    <ul>
+                        <li class="metrics">Developed custom Excel-based price checking tools and utilized advanced VLOOKUP functions, improving data processing efficiency by <strong>25%</strong> and reducing manual errors.</li>
+                        <li>Created a robust Google Sheet SOP for Amazon Jira Issues, standardizing issue tracking and significantly accelerating resolution times.</li>
+                        <li>Implemented comprehensive SOPs for Amazon Reimbursement Process and FBA Department Operations, enhancing workflow efficiency and reducing financial discrepancies.</li>
+                        <li class="metrics">Managed and optimized Amazon account health, proactively resolving performance issues and leading to a <strong>20% increase in sales</strong> and enhanced visibility within six months.</li>
+                    </ul>
+                </div>
+                <div class="icon-grid">
+                    <div class="icon-item"><i class="fas fa-file-excel"></i><span>Advanced Excel</span></div>
+                    <div class="icon-item"><i class="fas fa-clipboard-list"></i><span>SOP Creation</span></div>
+                    <div class="icon-item"><i class="fas fa-diagram-project"></i><span>Process Optimization</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: My Unique Edge: Bridging E-commerce & Development -->
+        <section id="slide6" class="slide">
+            <div class="slide-content">
+                <h2 class="headline">My Unique Edge: The E-commerce Specialist Who Codes</h2>
+                <p class="highlight-text">This is where I stand out – my ability to build custom, scalable solutions that directly solve real-world e-commerce problems, not just identify them.</p>
+                <div class="unique-edge-grid">
+                    <div class="unique-edge-item">
+                        <h4>Custom Automation & Tooling</h4>
+                        <ul>
+                            <li>Active development of custom automation tools using <strong>SP-API and Node.js</strong> for scalable data extraction, reporting, and workflow optimization.</li>
+                            <li>Experience leveraging <strong>Google Apps Script</strong> to enhance existing manual workflows in Google Sheets, making them faster, more accurate, and reducing reliance on external software.</li>
+                        </ul>
+                    </div>
+                    <div class="unique-edge-item">
+                        <h4>Strategic Technical Integration</h4>
+                        <ul>
+                            <li>Applying <strong>AI/ML implementation concepts</strong> to e-commerce challenges for predictive analytics, demand forecasting, and personalized customer experiences.</li>
+                            <li>Proficiency in modern technical stacks (Node.js, React, MongoDB, AWS) to build robust, tailored solutions that complement strategic business objectives.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Beyond the Job Description - My Projects & Passions -->
+        <section id="slide7" class="slide">
+            <div class="slide-content">
+                <h2 class="headline">Beyond the Job Description: Innovating & Creating</h2>
+                <p class="highlight-text">My passion for innovation extends to personal projects that explore new ways to tackle complex e-commerce and data challenges.</p>
+                <div class="project-card-grid">
+                    <div class="project-card">
+                        <h4>My Amazon Analytics</h4>
+                        <p>A comprehensive dashboard for optimizing Amazon advertising performance and extracting actionable insights from complex SP-API data.</p>
+                        <a href="https://wescode.vercel.app/my-amazon-analytics" target="_blank">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h4>Alerion (Enterprise Ad Platform)</h4>
+                        <p>An enterprise-grade Amazon Advertising Analytics Platform designed for advanced data analysis and large-scale campaign optimization.</p>
+                        <a href="https://github.com/johnwesleyquintero/alerion" target="_blank">View GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <h4>WesAI (AI Assistant)</h4>
+                        <p>An AI-powered personal assistant and code analysis tool, showcasing my interest in leveraging AI for productivity and problem-solving.</p>
+                        <a href="https://github.com/johnwesleyquintero/wesai-personal-assistant" target="_blank">View GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <h4>Case Studies & Articles</h4>
+                        <p>Analytical deep dives into real-world business scenarios, demonstrating strategic thinking and problem-solving (e.g., SecuLife, SpeedTalk Mobile).</p>
+                        <a href="https://johnwesleyquintero-article.netlify.app" target="_blank">Read Article</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: My Skillset - A Comprehensive Toolkit -->
+        <section id="slide8" class="slide">
+            <div class="slide-content">
+                <h2 class="headline">My Skillset: A Holistic Approach to E-commerce Success</h2>
+                <div class="skill-category-grid">
+                    <div class="skill-category">
+                        <h4>Amazon & E-commerce</h4>
+                        <ul>
+                            <li>Marketplace Management & SEO</li>
+                            <li>PPC (SP/SB/SD, Bid Optimization)</li>
+                            <li>FBA Inventory & Logistics</li>
+                            <li>Competitor & Market Analysis</li>
+                            <li>Account Health Management</li>
+                            <li>Vendor Central / Seller Central</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Data & Analytics</h4>
+                        <ul>
+                            <li>Advanced Seller Central Reporting</li>
+                            <li>Data Visualization (Looker Studio, Power BI, Sheets)</li>
+                            <li>Profitability & KPI Tracking</li>
+                            <li>Translating Data into Strategy</li>
+                            <li>Advanced Excel & Google Sheets</li>
+                            <li>SQL & NoSQL Databases</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Automation & Development</h4>
+                        <ul>
+                            <li>SP-API & Node.js Integration</li>
+                            <li>Custom E-commerce Tooling</li>
+                            <li>Google Apps Script</li>
+                            <li>Python, JavaScript/TypeScript</li>
+                            <li>Workflow & Process Automation</li>
+                            <li>AWS Lambda & S3</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Tools & Platforms</h4>
+                        <ul>
+                            <li>Helium 10, Jungle Scout</li>
+                            <li>Smartscout, SellerAmp SAS, Keepa</li>
+                            <li>Jira, Asana, Notion, ClickUp</li>
+                            <li>Zapier, Make.com</li>
+                            <li>Postman, Git/GitHub, VS Code</li>
+                            <li>MongoDB, PostgreSQL</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Why Me? - My Vision & How I'll Contribute -->
+        <section id="slide9" class="slide">
+            <div class="slide-content">
+                <h2 class="headline">Why Me? - Driving Your E-commerce Success</h2>
+                <p class="highlight-text">I'm uniquely positioned to deliver tangible, measurable results by combining deep Amazon expertise with a proactive, technical problem-solving approach.</p>
+                <ul>
+                    <li><strong>Strategic Impact:</strong> I will leverage my data-driven strategies and technical acumen to optimize your Amazon operations, unlock new growth opportunities, and ensure a strong ROI.</li>
+                    <li><strong>Proactive Problem-Solving:</strong> I don't just identify issues; I build practical, scalable solutions tailored to your team's unique needs, whether through custom scripts or enhanced existing tools.</li>
+                    <li><strong>Continuous Innovation & Adaptation:</strong> I am always seeking new ways to innovate and stay ahead of industry trends, ensuring your e-commerce presence is robust, efficient, and future-proof.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 10: Questions & Thank You -->
+        <section id="slide10" class="slide">
+            <div class="slide-content" style="text-align: center;">
+                <h2 class="headline">Thank You for Your Time!</h2>
+                <p class="call-to-action">I'm happy to answer any questions you may have and discuss how my unique blend of e-commerce strategy and technical expertise can benefit your team.</p>
+                <p class="contact-info">
+                    <i class="fas fa-envelope"></i> <a href="mailto:wesley.ecomva@gmail.com">wesley.ecomva@gmail.com</a><br>
+                    <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/johnwesleyquintero" target="_blank">LinkedIn Profile</a>
+                </p>
+                <p class="call-to-action">Let's connect and discuss how I can <strong>drive your e-commerce growth!</strong></p>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
